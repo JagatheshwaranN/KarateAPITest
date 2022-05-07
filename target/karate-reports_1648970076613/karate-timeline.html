@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/feature\/GET_API_Demo[1:3]","start":1648969987854,"end":1648969989965,"title":"src\/test\/java\/feature\/GET_API_Demo[1:3] 12:43:07.854-12:43:09.965 Get the user details - path param - positive","className":"failed"},{"id":2,"group":1,"content":"src\/test\/java\/feature\/GET_API_Demo[2:14]","start":1648969989979,"end":1648969990124,"title":"src\/test\/java\/feature\/GET_API_Demo[2:14] 12:43:09.979-12:43:10.124 Get the user details - path param - negative","className":"failed"},{"id":3,"group":1,"content":"src\/test\/java\/feature\/GET_API_Demo[3:23]","start":1648969990150,"end":1648969990398,"title":"src\/test\/java\/feature\/GET_API_Demo[3:23] 12:43:10.150-12:43:10.398 Get the user details - query param - positive"},{"id":4,"group":1,"content":"src\/test\/java\/feature\/GET_API_Demo[4:31]","start":1648969990413,"end":1648969990706,"title":"src\/test\/java\/feature\/GET_API_Demo[4:31] 12:43:10.413-12:43:10.706 Get the list of active users - query param - positive"},{"id":5,"group":1,"content":"src\/test\/java\/feature\/GET_API_Demo[5:41]","start":1648969990757,"end":1648969990919,"title":"src\/test\/java\/feature\/GET_API_Demo[5:41] 12:43:10.757-12:43:10.919 Get the user details - query param - negative","className":"failed"},{"id":6,"group":1,"content":"src\/test\/java\/feature\/GET_API_Demo[6:51]","start":1648969990927,"end":1648969991068,"title":"src\/test\/java\/feature\/GET_API_Demo[6:51] 12:43:10.927-12:43:11.068 Get the user details - with headers - type 1","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

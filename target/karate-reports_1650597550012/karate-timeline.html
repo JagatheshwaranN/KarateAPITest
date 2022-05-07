@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[1:3]","start":1650597364589,"end":1650597366633,"title":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[1:3] 08:46:04.589-08:46:06.633 Verify the use of Assert keyword"},{"id":2,"group":1,"content":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[2:21]","start":1650597366663,"end":1650597366737,"title":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[2:21] 08:46:06.663-08:46:06.737 Verify the usage of the Assert features (match == )"},{"id":3,"group":1,"content":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[3:26]","start":1650597366759,"end":1650597366768,"title":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[3:26] 08:46:06.759-08:46:06.768 Verify the usage of the Assert features (match != )"},{"id":4,"group":1,"content":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[4:30]","start":1650597366787,"end":1650597366790,"title":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[4:30] 08:46:06.787-08:46:06.790 Verify the usage of the Assert features (match contains)"},{"id":5,"group":1,"content":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[5:34]","start":1650597366800,"end":1650597366816,"title":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[5:34] 08:46:06.800-08:46:06.816 Verify the usage of the Assert features (match contains only)"},{"id":6,"group":1,"content":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[6:40]","start":1650597366827,"end":1650597366842,"title":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[6:40] 08:46:06.827-08:46:06.842 Verify the usage of the Assert features (match contains any)"},{"id":7,"group":1,"content":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[7:46]","start":1650597366852,"end":1650597366862,"title":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[7:46] 08:46:06.852-08:46:06.862 Verify the usage of the Assert features (match contains deep)"},{"id":8,"group":1,"content":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[8:51]","start":1650597366887,"end":1650597366897,"title":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[8:51] 08:46:06.887-08:46:06.897 Verify the usage of the Assert features (match !contains)"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

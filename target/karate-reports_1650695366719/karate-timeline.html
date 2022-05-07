@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[1:3]","start":1650694106610,"end":1650694108761,"title":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[1:3] 11:38:26.610-11:38:28.761 Verify the use of Assert keyword"},{"id":2,"group":1,"content":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[2:21]","start":1650694108771,"end":1650694108818,"title":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[2:21] 11:38:28.771-11:38:28.818 Verify the usage of the Assert features (match == )"},{"id":3,"group":1,"content":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[3:26]","start":1650694108827,"end":1650694108830,"title":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[3:26] 11:38:28.827-11:38:28.830 Verify the usage of the Assert features (match != )"},{"id":4,"group":1,"content":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[4:30]","start":1650694108844,"end":1650694108847,"title":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[4:30] 11:38:28.844-11:38:28.847 Verify the usage of the Assert features (match contains)"},{"id":5,"group":1,"content":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[5:34]","start":1650694108854,"end":1650694108860,"title":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[5:34] 11:38:28.854-11:38:28.860 Verify the usage of the Assert features (match contains only)"},{"id":6,"group":1,"content":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[6:40]","start":1650694108868,"end":1650694108872,"title":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[6:40] 11:38:28.868-11:38:28.872 Verify the usage of the Assert features (match contains any)"},{"id":7,"group":1,"content":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[7:46]","start":1650694108880,"end":1650694108886,"title":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[7:46] 11:38:28.880-11:38:28.886 Verify the usage of the Assert features (match contains deep)"},{"id":8,"group":1,"content":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[8:51]","start":1650694108894,"end":1650694108901,"title":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[8:51] 11:38:28.894-11:38:28.901 Verify the usage of the Assert features (match !contains)"},{"id":9,"group":1,"content":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[9:62]","start":1650694108908,"end":1650694108945,"title":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[9:62] 11:38:28.908-11:38:28.945 Verify the usage of the Assert features (match each)"},{"id":10,"group":1,"content":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[10:73]","start":1650694108953,"end":1650694108964,"title":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[10:73] 11:38:28.953-11:38:28.964 Verify the usage of the Assert features (Fuzzy match)"},{"id":11,"group":1,"content":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[11:86]","start":1650694108972,"end":1650694108985,"title":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[11:86] 11:38:28.972-11:38:28.985 Verify the usage of the Assert features (Schema match)"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+<testsuite failures="0" name="src/test/java/feature/PUT_API_Demo.feature" skipped="0" tests="1" time="1.655495">
+  <testcase classname="src.test.java.feature.PUT_API_Demo" name="Update existing user using put call" time="1.655495">
+    <system-out>* url baseURL ............................................................. passed
+* def requestPayload = .................................................... passed
+Given path 'public/v2/users/30' ........................................... passed
+And request requestPayload ................................................ passed
+And header Authorization = 'Bearer '+tokenID .............................. passed
+When method PUT ........................................................... passed
+Then status 200 ........................................................... passed
+* print response .......................................................... passed
+And match $.id == 30 ...................................................... passed
+And match $.name == 'Anandamayi Varrier' .................................. passed</system-out>
+  </testcase>
+</testsuite>

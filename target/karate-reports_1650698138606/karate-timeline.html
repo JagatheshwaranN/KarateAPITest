@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/feature\/Scenario_Outline_Demo[1.1:15]","start":1650698109175,"end":1650698109573,"title":"src\/test\/java\/feature\/Scenario_Outline_Demo[1.1:15] 12:45:09.175-12:45:09.573 Name is John and Age is 5"},{"id":2,"group":1,"content":"src\/test\/java\/feature\/Scenario_Outline_Demo[1.2:16]","start":1650698109583,"end":1650698109592,"title":"src\/test\/java\/feature\/Scenario_Outline_Demo[1.2:16] 12:45:09.583-12:45:09.592 Name is Alex and Age is 6"},{"id":3,"group":1,"content":"src\/test\/java\/feature\/Scenario_Outline_Demo[2.1:24]","start":1650698109655,"end":1650698109705,"title":"src\/test\/java\/feature\/Scenario_Outline_Demo[2.1:24] 12:45:09.655-12:45:09.705 Data driven magic var with type hint"},{"id":4,"group":1,"content":"src\/test\/java\/feature\/Scenario_Outline_Demo[2.2:25]","start":1650698109714,"end":1650698109721,"title":"src\/test\/java\/feature\/Scenario_Outline_Demo[2.2:25] 12:45:09.714-12:45:09.721 Data driven magic var with type hint"},{"id":5,"group":1,"content":"src\/test\/java\/feature\/Scenario_Outline_Demo[3.1:34]","start":1650698109731,"end":1650698109735,"title":"src\/test\/java\/feature\/Scenario_Outline_Demo[3.1:34] 12:45:09.731-12:45:09.735 Data driven magic var with Inline json"},{"id":6,"group":1,"content":"src\/test\/java\/feature\/Scenario_Outline_Demo[4.1:43]","start":1650698109748,"end":1650698109917,"title":"src\/test\/java\/feature\/Scenario_Outline_Demo[4.1:43] 12:45:09.748-12:45:09.917 Name is John Peter and Age is 5","className":"failed"},{"id":7,"group":1,"content":"src\/test\/java\/feature\/Scenario_Outline_Demo[4.2:44]","start":1650698109926,"end":1650698109929,"title":"src\/test\/java\/feature\/Scenario_Outline_Demo[4.2:44] 12:45:09.926-12:45:09.929 Name is Alex Jeff and Age is 6","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

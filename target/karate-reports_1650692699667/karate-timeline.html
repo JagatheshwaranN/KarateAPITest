@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[1:3]","start":1650692620823,"end":1650692622914,"title":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[1:3] 11:13:40.823-11:13:42.914 Verify the use of Assert keyword"},{"id":2,"group":1,"content":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[2:21]","start":1650692622939,"end":1650692622997,"title":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[2:21] 11:13:42.939-11:13:42.997 Verify the usage of the Assert features (match == )"},{"id":3,"group":1,"content":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[3:26]","start":1650692623009,"end":1650692623011,"title":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[3:26] 11:13:43.009-11:13:43.011 Verify the usage of the Assert features (match != )"},{"id":4,"group":1,"content":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[4:30]","start":1650692623025,"end":1650692623032,"title":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[4:30] 11:13:43.025-11:13:43.032 Verify the usage of the Assert features (match contains)"},{"id":5,"group":1,"content":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[5:34]","start":1650692623047,"end":1650692623067,"title":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[5:34] 11:13:43.047-11:13:43.067 Verify the usage of the Assert features (match contains only)"},{"id":6,"group":1,"content":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[6:40]","start":1650692623076,"end":1650692623087,"title":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[6:40] 11:13:43.076-11:13:43.087 Verify the usage of the Assert features (match contains any)"},{"id":7,"group":1,"content":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[7:46]","start":1650692623099,"end":1650692623110,"title":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[7:46] 11:13:43.099-11:13:43.110 Verify the usage of the Assert features (match contains deep)"},{"id":8,"group":1,"content":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[8:51]","start":1650692623136,"end":1650692623158,"title":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[8:51] 11:13:43.136-11:13:43.158 Verify the usage of the Assert features (match !contains)"},{"id":9,"group":1,"content":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[9:62]","start":1650692623168,"end":1650692623229,"title":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[9:62] 11:13:43.168-11:13:43.229 Verify the usage of the Assert features (match each)"},{"id":10,"group":1,"content":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[10:73]","start":1650692623240,"end":1650692623245,"title":"src\/test\/java\/feature\/ResponseFeatures_Assert_Usage[10:73] 11:13:43.240-11:13:43.245 Verify the usage of the Assert features (Fuzzy match)","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

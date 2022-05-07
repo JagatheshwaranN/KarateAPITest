@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/feature\/Types_Usage[1:3]","start":1650338286241,"end":1650338286849,"title":"src\/test\/java\/feature\/Types_Usage[1:3] 08:48:06.241-08:48:06.849 Verify the usage of the Types features (Str to Integer)"},{"id":2,"group":1,"content":"src\/test\/java\/feature\/Types_Usage[2:12]","start":1650338286861,"end":1650338286879,"title":"src\/test\/java\/feature\/Types_Usage[2:12] 08:48:06.861-08:48:06.879 Verify the usage of the Types features (Str to Float)"},{"id":3,"group":1,"content":"src\/test\/java\/feature\/Types_Usage[3:19]","start":1650338286888,"end":1650338287116,"title":"src\/test\/java\/feature\/Types_Usage[3:19] 08:48:06.888-08:48:07.116 Verify the usage of the Types features (Str to Large Number)"},{"id":4,"group":1,"content":"src\/test\/java\/feature\/Types_Usage[4:27]","start":1650338287126,"end":1650338287133,"title":"src\/test\/java\/feature\/Types_Usage[4:27] 08:48:07.126-08:48:07.133 Verify the usage of the Types feature (JsonPath Filters)","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

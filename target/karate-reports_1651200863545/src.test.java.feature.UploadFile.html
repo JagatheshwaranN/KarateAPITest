@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="res/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="res/karate-report.css" type="text/css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <script type="text/javascript" src="res/jquery.min.js"></script>
+    <script type="text/javascript" src="res/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="res/bootstrap.min.js"></script>
+    <script type="text/javascript" src="res/karate-report.js"></script>
+    <title>src.test.java.feature.UploadFile</title>  
+  </head>
+  <body>   
+    <div id="root-container">
+      <div id="leftnav">
+                
+        <div>
+  <div class="nav-logo">
+    <a href="karate-summary.html">
+      <img src="karate-logo.svg" alt="Karate"/>
+    </a>
+    <div class="nav-count">
+      <div id="nav-pass" class="bg-success">2</div>
+      <div id="nav-fail" class="bg-danger">0</div>
+    </div>
+  </div>
+  <div id="nav-type">
+    <div>Scenarios</div>
+  </div>         
+  <div id="nav-date">
+    <div>2022-04-28 12:29:40 PM</div>
+  </div>        
+</div>
+
+        <div class="nav-container">
+          <div class="nav-item passed">
+            <a href="#[1:3]"><span>[1:3]</span> <span>Verify upload of file using Post call</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[2:11]"><span>[2:11]</span> <span>Verify download of file using Get call</span></a>
+          </div>
+        </div>
+      </div>
+      <div id="content">
+        <div class="page-heading alert alert-primary">
+          <a href="karate-summary.html">Summary</a><span class="feature-label">|</span>
+          <a href="karate-tags.html">Tags</a><span class="feature-label">|</span>
+          <span class="feature-label">Feature:</span>
+          <span class="feature-path">src/test/java/feature/UploadFile.feature</span><span class="feature-label">|</span>
+          <span class="feature-name">Automation of Upload File</span>
+          <span class="feature-description"></span>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[1:3]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[1:3]</span>
+                <span class="scenario-name">Verify upload of file using Post call</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>4612</span>
+            </div>
+          </div>
+          
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref passed">4</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url &#39;https://filebin.net/28042022/Buddha&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.4">12:29:31.267 karate.env system property is ===&gt;&gt;  null 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.5">
+      <div class="step-ref passed">5</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>header Content-type = &#39;image/jpg&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.6">
+      <div class="step-ref passed">6</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request karate.read(&#39;file:src/test/resources/payload/Buddha.jpg&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">7</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.7">
+      <div class="step-ref passed">7</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method POST</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4591</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.7">12:29:32.369 request:
+1 &gt; POST https://filebin.net/28042022/Buddha
+1 &gt; Content-type: image/jpg; charset=UTF-8
+1 &gt; Content-Length: 292239
+1 &gt; Host: filebin.net
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_201)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+12:29:35.828 response time in milliseconds: 3453
+1 &lt; 201
+1 &lt; Cache-Control: max-age=0
+1 &lt; Content-Type: application/json
+1 &lt; Vary: Accept-Encoding
+1 &lt; Date: Thu, 28 Apr 2022 06:59:35 GMT
+1 &lt; X-Varnish: 164042
+1 &lt; Age: 0
+1 &lt; Via: 1.1 varnish (Varnish/6.0)
+1 &lt; Access-Control-Allow-Origin: *
+1 &lt; Connection: keep-alive
+{
+    &quot;bin&quot;: {
+        &quot;id&quot;: &quot;28042022&quot;,
+        &quot;readonly&quot;: false,
+        &quot;bytes&quot;: 292239,
+        &quot;bytes_readable&quot;: &quot;292 kB&quot;,
+        &quot;files&quot;: 1,
+        &quot;updated_at&quot;: &quot;2022-04-28T06:59:35.571409Z&quot;,
+        &quot;updated_at_relative&quot;: &quot;now&quot;,
+        &quot;created_at&quot;: &quot;2022-04-28T03:36:11.158426Z&quot;,
+        &quot;created_at_relative&quot;: &quot;3 hours ago&quot;,
+        &quot;expired_at&quot;: &quot;2022-05-05T06:59:35.571408Z&quot;,
+        &quot;expired_at_relative&quot;: &quot;6 days from now&quot;
+    },
+    &quot;file&quot;: {
+        &quot;filename&quot;: &quot;Buddha&quot;,
+        &quot;content-type&quot;: &quot;image/jpeg&quot;,
+        &quot;bytes&quot;: 292239,
+        &quot;bytes_readable&quot;: &quot;292 kB&quot;,
+        &quot;md5&quot;: &quot;NDk4MTNkMGFjMWJiNzE5NTVhYjg1Nzk3ZDhkMjM0Mzg=&quot;,
+        &quot;sha256&quot;: &quot;5b38b64ae893252d742118c83e4c9d44d8c9f18c5b015904356b7be2754e692f&quot;,
+        &quot;updated_at&quot;: &quot;2022-04-28T06:59:35.566735Z&quot;,
+        &quot;updated_at_relative&quot;: &quot;now&quot;,
+        &quot;created_at&quot;: &quot;2022-04-28T03:36:43.109648Z&quot;,
+        &quot;created_at_relative&quot;: &quot;3 hours ago&quot;
+    }
+}
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.8">
+      <div class="step-ref passed">8</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 201</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.9">
+      <div class="step-ref passed">9</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>print response</span>
+      </div>
+    </div>
+    <div class="time-cell passed">12</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.9">12:29:35.942 [print] {
+  &quot;bin&quot;: {
+    &quot;id&quot;: &quot;28042022&quot;,
+    &quot;readonly&quot;: false,
+    &quot;bytes&quot;: 292239,
+    &quot;bytes_readable&quot;: &quot;292 kB&quot;,
+    &quot;files&quot;: 1,
+    &quot;updated_at&quot;: &quot;2022-04-28T06:59:35.571409Z&quot;,
+    &quot;updated_at_relative&quot;: &quot;now&quot;,
+    &quot;created_at&quot;: &quot;2022-04-28T03:36:11.158426Z&quot;,
+    &quot;created_at_relative&quot;: &quot;3 hours ago&quot;,
+    &quot;expired_at&quot;: &quot;2022-05-05T06:59:35.571408Z&quot;,
+    &quot;expired_at_relative&quot;: &quot;6 days from now&quot;
+  },
+  &quot;file&quot;: {
+    &quot;filename&quot;: &quot;Buddha&quot;,
+    &quot;content-type&quot;: &quot;image/jpeg&quot;,
+    &quot;bytes&quot;: 292239,
+    &quot;bytes_readable&quot;: &quot;292 kB&quot;,
+    &quot;md5&quot;: &quot;NDk4MTNkMGFjMWJiNzE5NTVhYjg1Nzk3ZDhkMjM0Mzg=&quot;,
+    &quot;sha256&quot;: &quot;5b38b64ae893252d742118c83e4c9d44d8c9f18c5b015904356b7be2754e692f&quot;,
+    &quot;updated_at&quot;: &quot;2022-04-28T06:59:35.566735Z&quot;,
+    &quot;updated_at_relative&quot;: &quot;now&quot;,
+    &quot;created_at&quot;: &quot;2022-04-28T03:36:43.109648Z&quot;,
+    &quot;created_at_relative&quot;: &quot;3 hours ago&quot;
+  }
+}
+ 
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2:11]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2:11]</span>
+                <span class="scenario-name">Verify download of file using Get call</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>4319</span>
+            </div>
+          </div>
+          
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.12">
+      <div class="step-ref passed">12</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url &#39;https://filebin.net/28042022/Buddha&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.12">12:29:35.963 karate.env system property is ===&gt;&gt;  null 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.13">
+      <div class="step-ref passed">13</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>header Content-type = &#39;image/jpg&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.14">
+      <div class="step-ref passed">14</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">3900</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.14">12:29:35.971 request:
+1 &gt; GET https://filebin.net/28042022/Buddha
+1 &gt; Content-type: image/jpg
+1 &gt; Host: filebin.net
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_201)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+12:29:36.657 request:
+2 &gt; GET https://filebin.net/28042022/Buddha
+2 &gt; Content-type: image/jpg
+2 &gt; Host: situla.bitbit.net
+2 &gt; Connection: Keep-Alive
+2 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_201)
+2 &gt; Accept-Encoding: gzip,deflate
+
+
+12:29:39.866 response time in milliseconds: 3207
+2 &lt; 200
+2 &lt; Content-Length: 292239
+2 &lt; Accept-Ranges: bytes
+2 &lt; Last-Modified: Thu, 28 Apr 2022 06:59:35 GMT
+2 &lt; ETag: &quot;49813d0ac1bb71955ab85797d8d23438&quot;
+2 &lt; Cache-Control: max-age=30
+2 &lt; Content-Disposition: filename=&quot;Buddha&quot;
+2 &lt; x-amz-request-id: tx000000000000001b80ac5-00626a3b5a-3b4fb0d4-default
+2 &lt; Content-Type: image/jpeg
+2 &lt; Date: Thu, 28 Apr 2022 06:59:38 GMT
+2 &lt; Connection: Keep-Alive
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.15">
+      <div class="step-ref passed">15</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.16">
+      <div class="step-ref passed">16</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>match response == karate.read(&#39;file:src/test/resources/payload/Buddha.jpg&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">417</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

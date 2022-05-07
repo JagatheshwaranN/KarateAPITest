@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/feature\/GET_API_Demo[1:3]","start":1648971662992,"end":1648971665306,"title":"src\/test\/java\/feature\/GET_API_Demo[1:3] 13:11:02.992-13:11:05.306 Get the user details - path param - positive"},{"id":2,"group":1,"content":"src\/test\/java\/feature\/GET_API_Demo[2:14]","start":1648971665330,"end":1648971665510,"title":"src\/test\/java\/feature\/GET_API_Demo[2:14] 13:11:05.330-13:11:05.510 Get the user details - path param - negative"},{"id":3,"group":1,"content":"src\/test\/java\/feature\/GET_API_Demo[3:23]","start":1648971665526,"end":1648971665801,"title":"src\/test\/java\/feature\/GET_API_Demo[3:23] 13:11:05.526-13:11:05.801 Get the user details - query param - positive"},{"id":4,"group":1,"content":"src\/test\/java\/feature\/GET_API_Demo[4:31]","start":1648971665840,"end":1648971666040,"title":"src\/test\/java\/feature\/GET_API_Demo[4:31] 13:11:05.840-13:11:06.040 Get the list of active users - query param - positive"},{"id":5,"group":1,"content":"src\/test\/java\/feature\/GET_API_Demo[5:41]","start":1648971666056,"end":1648971666222,"title":"src\/test\/java\/feature\/GET_API_Demo[5:41] 13:11:06.056-13:11:06.222 Get the user details - query param - negative"},{"id":6,"group":1,"content":"src\/test\/java\/feature\/GET_API_Demo[6:51]","start":1648971666230,"end":1648971666403,"title":"src\/test\/java\/feature\/GET_API_Demo[6:51] 13:11:06.230-13:11:06.403 Get the user details - with headers - type 1"},{"id":7,"group":1,"content":"src\/test\/java\/feature\/GET_API_Demo[7:59]","start":1648971666420,"end":1648971666579,"title":"src\/test\/java\/feature\/GET_API_Demo[7:59] 13:11:06.420-13:11:06.579 Get the user details - with headers - type 2"},{"id":8,"group":1,"content":"src\/test\/java\/feature\/GET_API_Demo[8:68]","start":1648971666588,"end":1648971666752,"title":"src\/test\/java\/feature\/GET_API_Demo[8:68] 13:11:06.588-13:11:06.752 Get the user details - with headers - type 3"},{"id":9,"group":1,"content":"src\/test\/java\/feature\/GET_API_Demo[9:76]","start":1648971666761,"end":1648971666927,"title":"src\/test\/java\/feature\/GET_API_Demo[9:76] 13:11:06.761-13:11:06.927 Get the user details using Bearer token"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

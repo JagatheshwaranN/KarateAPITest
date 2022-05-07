@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/feature\/GET_API_Demo[1:3]","start":1648888836976,"end":1648888838815,"title":"src\/test\/java\/feature\/GET_API_Demo[1:3] 14:10:36.976-14:10:38.815 Get the user details - path param - positive"},{"id":2,"group":1,"content":"src\/test\/java\/feature\/GET_API_Demo[2:14]","start":1648888838826,"end":1648888838964,"title":"src\/test\/java\/feature\/GET_API_Demo[2:14] 14:10:38.826-14:10:38.964 Get the user details - path param - negative"},{"id":3,"group":1,"content":"src\/test\/java\/feature\/GET_API_Demo[3:23]","start":1648888838975,"end":1648888839013,"title":"src\/test\/java\/feature\/GET_API_Demo[3:23] 14:10:38.975-14:10:39.013 Get the user details - query param - positive","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

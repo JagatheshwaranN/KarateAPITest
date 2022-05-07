@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/feature\/Types_Usage[1:3]","start":1650461522477,"end":1650461523045,"title":"src\/test\/java\/feature\/Types_Usage[1:3] 19:02:02.477-19:02:03.045 Verify the usage of the Types features (Str to Integer)"},{"id":2,"group":1,"content":"src\/test\/java\/feature\/Types_Usage[2:12]","start":1650461523056,"end":1650461523081,"title":"src\/test\/java\/feature\/Types_Usage[2:12] 19:02:03.056-19:02:03.081 Verify the usage of the Types features (Str to Float)"},{"id":3,"group":1,"content":"src\/test\/java\/feature\/Types_Usage[3:19]","start":1650461523101,"end":1650461523146,"title":"src\/test\/java\/feature\/Types_Usage[3:19] 19:02:03.101-19:02:03.146 Verify the usage of the Types features (Str to Large Number)"},{"id":4,"group":1,"content":"src\/test\/java\/feature\/Types_Usage[4:27]","start":1650461523155,"end":1650461523270,"title":"src\/test\/java\/feature\/Types_Usage[4:27] 19:02:03.155-19:02:03.270 Verify the usage of the Types feature (JsonPath Filters)"},{"id":5,"group":1,"content":"src\/test\/java\/feature\/Types_Usage[5:44]","start":1650461523278,"end":1650461523287,"title":"src\/test\/java\/feature\/Types_Usage[5:44] 19:02:03.278-19:02:03.287 Verify the usage of the Types feature (Karate map operation)"},{"id":6,"group":1,"content":"src\/test\/java\/feature\/Types_Usage[6:50]","start":1650461523295,"end":1650461523302,"title":"src\/test\/java\/feature\/Types_Usage[6:50] 19:02:03.295-19:02:03.302 Verify the usage of the Types feature (Karate map operation)"},{"id":7,"group":1,"content":"src\/test\/java\/feature\/Types_Usage[7:56]","start":1650461523310,"end":1650461523314,"title":"src\/test\/java\/feature\/Types_Usage[7:56] 19:02:03.310-19:02:03.314 Verify the usage of the Types feature (Karate map operation)"},{"id":8,"group":1,"content":"src\/test\/java\/feature\/Types_Usage[8:61]","start":1650461523325,"end":1650461523336,"title":"src\/test\/java\/feature\/Types_Usage[8:61] 19:02:03.325-19:02:03.336 Verify the usage of the Types feature (Karate filter operation)"},{"id":9,"group":1,"content":"src\/test\/java\/feature\/Types_Usage[9:67]","start":1650461523344,"end":1650461523356,"title":"src\/test\/java\/feature\/Types_Usage[9:67] 19:02:03.344-19:02:03.356 Verify the usage of the Types feature (Karate forEach operation)"},{"id":10,"group":1,"content":"src\/test\/java\/feature\/Types_Usage[10:85]","start":1650461523364,"end":1650461523384,"title":"src\/test\/java\/feature\/Types_Usage[10:85] 19:02:03.364-19:02:03.384 Verify the usage of the Types feature (Karate filterKeys operation)"},{"id":11,"group":1,"content":"src\/test\/java\/feature\/Types_Usage[11:92]","start":1650461523392,"end":1650461523398,"title":"src\/test\/java\/feature\/Types_Usage[11:92] 19:02:03.392-19:02:03.398 Verify the usage of the Types feature (Karate merge operation)"},{"id":12,"group":1,"content":"src\/test\/java\/feature\/Types_Usage[12:97]","start":1650461523405,"end":1650461523453,"title":"src\/test\/java\/feature\/Types_Usage[12:97] 19:02:03.405-19:02:03.453 Verify the usage of the Types feature (Karate append operation)"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

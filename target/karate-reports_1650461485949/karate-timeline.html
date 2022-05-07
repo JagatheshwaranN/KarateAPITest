@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/feature\/Types_Usage[1:3]","start":1650461374679,"end":1650461375169,"title":"src\/test\/java\/feature\/Types_Usage[1:3] 18:59:34.679-18:59:35.169 Verify the usage of the Types features (Str to Integer)"},{"id":2,"group":1,"content":"src\/test\/java\/feature\/Types_Usage[2:12]","start":1650461375180,"end":1650461375197,"title":"src\/test\/java\/feature\/Types_Usage[2:12] 18:59:35.180-18:59:35.197 Verify the usage of the Types features (Str to Float)"},{"id":3,"group":1,"content":"src\/test\/java\/feature\/Types_Usage[3:19]","start":1650461375205,"end":1650461375252,"title":"src\/test\/java\/feature\/Types_Usage[3:19] 18:59:35.205-18:59:35.252 Verify the usage of the Types features (Str to Large Number)"},{"id":4,"group":1,"content":"src\/test\/java\/feature\/Types_Usage[4:27]","start":1650461375261,"end":1650461375399,"title":"src\/test\/java\/feature\/Types_Usage[4:27] 18:59:35.261-18:59:35.399 Verify the usage of the Types feature (JsonPath Filters)"},{"id":5,"group":1,"content":"src\/test\/java\/feature\/Types_Usage[5:44]","start":1650461375415,"end":1650461375439,"title":"src\/test\/java\/feature\/Types_Usage[5:44] 18:59:35.415-18:59:35.439 Verify the usage of the Types feature (Karate map operation)"},{"id":6,"group":1,"content":"src\/test\/java\/feature\/Types_Usage[6:50]","start":1650461375446,"end":1650461375453,"title":"src\/test\/java\/feature\/Types_Usage[6:50] 18:59:35.446-18:59:35.453 Verify the usage of the Types feature (Karate map operation)"},{"id":7,"group":1,"content":"src\/test\/java\/feature\/Types_Usage[7:56]","start":1650461375461,"end":1650461375464,"title":"src\/test\/java\/feature\/Types_Usage[7:56] 18:59:35.461-18:59:35.464 Verify the usage of the Types feature (Karate map operation)"},{"id":8,"group":1,"content":"src\/test\/java\/feature\/Types_Usage[8:61]","start":1650461375472,"end":1650461375480,"title":"src\/test\/java\/feature\/Types_Usage[8:61] 18:59:35.472-18:59:35.480 Verify the usage of the Types feature (Karate filter operation)"},{"id":9,"group":1,"content":"src\/test\/java\/feature\/Types_Usage[9:67]","start":1650461375490,"end":1650461375503,"title":"src\/test\/java\/feature\/Types_Usage[9:67] 18:59:35.490-18:59:35.503 Verify the usage of the Types feature (Karate forEach operation)"},{"id":10,"group":1,"content":"src\/test\/java\/feature\/Types_Usage[10:85]","start":1650461375512,"end":1650461375534,"title":"src\/test\/java\/feature\/Types_Usage[10:85] 18:59:35.512-18:59:35.534 Verify the usage of the Types feature (Karate filterKeys operation)"},{"id":11,"group":1,"content":"src\/test\/java\/feature\/Types_Usage[11:92]","start":1650461375541,"end":1650461375551,"title":"src\/test\/java\/feature\/Types_Usage[11:92] 18:59:35.541-18:59:35.551 Verify the usage of the Types feature (Karate merge operation)"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

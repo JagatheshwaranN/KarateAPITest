@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/feature\/GET_API_Demo[1:3]","start":1648889568325,"end":1648889569929,"title":"src\/test\/java\/feature\/GET_API_Demo[1:3] 14:22:48.325-14:22:49.929 Get the user details - path param - positive"},{"id":2,"group":1,"content":"src\/test\/java\/feature\/GET_API_Demo[2:14]","start":1648889569942,"end":1648889570079,"title":"src\/test\/java\/feature\/GET_API_Demo[2:14] 14:22:49.942-14:22:50.079 Get the user details - path param - negative"},{"id":3,"group":1,"content":"src\/test\/java\/feature\/GET_API_Demo[3:23]","start":1648889570090,"end":1648889570267,"title":"src\/test\/java\/feature\/GET_API_Demo[3:23] 14:22:50.090-14:22:50.267 Get the user details - query param - positive"},{"id":4,"group":1,"content":"src\/test\/java\/feature\/GET_API_Demo[4:31]","start":1648889570288,"end":1648889570450,"title":"src\/test\/java\/feature\/GET_API_Demo[4:31] 14:22:50.288-14:22:50.450 Get the list of active users - query param - positive","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+<meta charset="utf-8">
+    
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    
+<link href="res/bootstrap.min.css" rel="stylesheet" type="text/css">
+    
+<link href="res/karate-report.css" rel="stylesheet" type="text/css">
+    
+<link href="favicon.ico" rel="shortcut icon">
+    
+<script src="res/jquery.min.js" type="text/javascript"></script>
+    <script src="res/jquery.tablesorter.min.js" type="text/javascript"></script>
+    <script src="res/bootstrap.min.js" type="text/javascript"></script>
+    <script src="res/karate-report.js" type="text/javascript"></script>
+    
+<title>src.test.java.feature.POST_API_Demo_Using_JsonFile</title>
+  
+</head>
+  
+<body>
+    
+<div id="root-container">
+      
+<div id="leftnav">
+        
+<div class="nav-logo">
+          
+<a href="karate-summary.html">
+            <img alt="Karate" src="res/karate-logo.svg">
+          </a>
+          
+<div class="nav-count">
+            
+<div class="bg-success" id="nav-pass">1</div>
+            
+<div class="bg-danger" id="nav-fail">0</div>
+          
+</div>
+        
+</div>
+        
+<div id="nav-type">Scenarios</div>         
+        
+<div id="nav-date">2022-04-10 02:27:21 PM</div>        
+      
+<div class="nav-container">
+<div class="nav-item passed">
+<a href="#[1:23]">[1:23] Create new user using post with json file </a>
+</div>
+</div>
+</div>
+      
+<div id="content">
+      
+<div class="page-heading alert alert-primary">
+<a href="karate-summary.html">Summary</a><span class="feature-label">|</span><a href="karate-tags.html">Tags</a><span class="feature-label">|</span><span class="feature-label">Feature:</span><span class="feature-name">src/test/java/feature/POST_API_Demo_Using_JsonFile.feature</span><span class="feature-description">POST API Automation</span>
+</div>
+<div class="scenario">
+<div class="scenario-heading" id="[1:23]">
+<div class="heading-container">
+<div class="scenario-tags"></div>
+<span class="scenario-keyword">Scenario: [1:23]</span><span class="scenario-name">Create new user using post with json file </span>
+</div>
+<div class="scenario-time passed">ms: 2799</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="[1:23]bg">
+<div class="step-ref bg-step">&gt;&gt;</div>
+<div class="step-cell passed">Background:</div>
+</div>
+<div class="time-cell passed"></div>
+</div>
+<div class="step-row" data-parent="[1:23]bg">
+<div class="step-container" id="1">
+<div class="step-ref bg-step">1</div>
+<div class="step-cell passed">* url baseURL</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row" data-parent="[1:23]bg">
+<div class="step-container" id="2">
+<div class="step-ref bg-step">2</div>
+<div class="step-cell passed">* def randomString =</div>
+</div>
+<div class="time-cell passed">13</div>
+</div>
+<div class="preformatted" data-parent="2">function(s){
+var str ="";
+var pattern = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+for(var i=0; i&lt;s;i++){
+str += pattern.charAt(Math.floor(Math.random() * pattern.length()));
+}
+return str;
+}</div>
+<div class="step-row" data-parent="[1:23]bg">
+<div class="step-container" id="3">
+<div class="step-ref bg-step">3</div>
+<div class="step-cell passed">* def randomStr = randomString(10);</div>
+</div>
+<div class="time-cell passed">66</div>
+</div>
+<div class="step-row" data-parent="[1:23]bg">
+<div class="step-container" id="4">
+<div class="step-ref bg-step">4</div>
+<div class="step-cell passed">* print randomStr</div>
+</div>
+<div class="time-cell passed">17</div>
+</div>
+<div class="preformatted" data-parent="4">14:27:18.322 [print] DkGBVoSWlj</div>
+<div class="step-row" data-parent="[1:23]bg">
+<div class="step-container" id="5">
+<div class="step-ref bg-step">5</div>
+<div class="step-cell passed">* def requestPayload = read('classpath:src/test/resources/payload/user.json')</div>
+</div>
+<div class="time-cell passed">23</div>
+</div>
+<div class="step-row" data-parent="[1:23]bg">
+<div class="step-container" id="6">
+<div class="step-ref bg-step">6</div>
+<div class="step-cell passed">* set requestPayload.email = randomStr+"@gmail.com"</div>
+</div>
+<div class="time-cell passed">17</div>
+</div>
+<div class="step-row" data-parent="[1:23]bg">
+<div class="step-container" id="7">
+<div class="step-ref bg-step">7</div>
+<div class="step-cell passed">* print requestPayload</div>
+</div>
+<div class="time-cell passed">2</div>
+</div>
+<div class="preformatted" data-parent="7">14:27:18.382 [print] {
+  "name": "Qwerty",
+  "gender": "Male",
+  "status": "active",
+  "email": "DkGBVoSWlj@gmail.com"
+}</div>
+<div class="step-row">
+<div class="step-container" id="8">
+<div class="step-ref passed">8</div>
+<div class="step-cell passed">Given path 'public/v2/users'</div>
+</div>
+<div class="time-cell passed">8</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="9">
+<div class="step-ref passed">9</div>
+<div class="step-cell passed">And request requestPayload</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="10">
+<div class="step-ref passed">10</div>
+<div class="step-cell passed">And header Authorization = 'Bearer '+tokenID</div>
+</div>
+<div class="time-cell passed">16</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="11">
+<div class="step-ref passed">11</div>
+<div class="step-cell passed">When method POST</div>
+</div>
+<div class="time-cell passed">2571</div>
+</div>
+<div class="preformatted" data-parent="11">14:27:19.940 request:
+1 &gt; POST https://gorest.co.in/public/v2/users
+1 &gt; Accept-Encoding: gzip,deflate
+1 &gt; Authorization: Bearer 6e0066a0bb86cd647aa2decf379be41d032015434b9f54eff829883d35b2835b
+1 &gt; Connection: Keep-Alive
+1 &gt; Content-Length: 82
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Host: gorest.co.in
+1 &gt; User-Agent: Apache-HttpClient/4.5.12 (Java/1.8.0_201)
+{"name":"Qwerty","gender":"Male","status":"active","email":"DkGBVoSWlj@gmail.com"}
+
+14:27:20.977 response time in milliseconds: 1030.74
+1 &lt; 201
+1 &lt; Cache-Control: max-age=0, private, must-revalidate
+1 &lt; Connection: keep-alive
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Date: Sun, 10 Apr 2022 08:57:21 GMT
+1 &lt; ETag: W/"99e19d841b4d5b0e7c5b1eab1b1d89c6"
+1 &lt; Location: https://gorest.co.in/public/v2/users/4679
+1 &lt; Referrer-Policy: strict-origin-when-cross-origin
+1 &lt; Server: nginx
+1 &lt; Strict-Transport-Security: max-age=63072000; includeSubDomains
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Vary: Origin
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-Download-Options: noopen
+1 &lt; X-Frame-Options: SAMEORIGIN
+1 &lt; X-Permitted-Cross-Domain-Policies: none
+1 &lt; X-RateLimit-Limit: 90
+1 &lt; X-RateLimit-Remaining: 86
+1 &lt; X-RateLimit-Reset: 1
+1 &lt; X-Request-Id: dfe4d812-596c-4255-a996-1bc70bdc7bb7
+1 &lt; X-Runtime: 0.024553
+1 &lt; X-XSS-Protection: 0
+{"id":4679,"name":"Qwerty","email":"DkGBVoSWlj@gmail.com","gender":"male","status":"active"}</div>
+<div class="step-row">
+<div class="step-container" id="12">
+<div class="step-ref passed">12</div>
+<div class="step-cell passed">Then status 201</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="13">
+<div class="step-ref passed">13</div>
+<div class="step-cell passed">* print response</div>
+</div>
+<div class="time-cell passed">2</div>
+</div>
+<div class="preformatted" data-parent="13">14:27:20.983 [print] {
+  "gender": "male",
+  "name": "Qwerty",
+  "id": 4679,
+  "email": "DkGBVoSWlj@gmail.com",
+  "status": "active"
+}</div>
+<div class="step-row">
+<div class="step-container" id="14">
+<div class="step-ref passed">14</div>
+<div class="step-cell passed">And match $.id =='#present'</div>
+</div>
+<div class="time-cell passed">13</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="15">
+<div class="step-ref passed">15</div>
+<div class="step-cell passed">And match $.name =='Qwerty'</div>
+</div>
+<div class="time-cell passed">9</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="16">
+<div class="step-ref passed">16</div>
+<div class="step-cell passed">And match $.email == requestPayload.email</div>
+</div>
+<div class="time-cell passed">42</div>
+</div>
+</div>
+</div>
+    
+</div>   
+  
+</body>
+
+</html>
