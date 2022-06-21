@@ -69,7 +69,7 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.26</version><!--$NO-MVN-MAN-VER$ -->
+			<version>8.0.28</version><!--$NO-MVN-MAN-VER$ -->
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
 		<dependency>
