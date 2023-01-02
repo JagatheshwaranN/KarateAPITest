@@ -16,4 +16,3 @@ Feature: Automation of GET API
     Then print country
     And match response.countryId == country.CTRY_ID
     And match response.countryName == country.CTRY_NAME
-    
